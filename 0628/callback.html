@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setTimeout(code, delay) : delay 시간동안 기다렸다가 code를 실행(callback함수)
+        // console.log(1);
+        // setTimeout(()=>{
+        //     console.log(2);
+        // }, 3000)
+        // console.log(3);
+
+        //문제가 있는 코드
+        // function goMart() {
+        //         console.log("마트에 가서 어떤 음료를 살지 고민한다.");
+        // }
+
+        // function pickDrink(callback) {
+        //     setTimeout(() => {
+        //         console.log("고민끝");
+        //         product = '제로콜라';
+        //         price = 3000;
+        //         callback(product, price);
+        //     }, 3000);
+        // }
+
+        // function pay(product, price) {
+        //     console.log(`상품명 : ${product}, 가격 : ${price}`);
+        // }
+
+        // let product;
+        // let price;
+        // goMart();
+        // pickDrink(pay);
+        // pay(product, price);
+
+        //콜백함수 생김새
+        //콜백함수는 함수타입 파라미터 맨 마지막에 하나 더 선언
+        //함수가 실행을 끝낸 후 실행되는 함수
+        
+        // function mainFunc(param1, param2, callback) {
+        //     console.log(param1);
+        //     console.log(param2);
+        //     callback();
+        // }
+        // function callbackFunc() {
+        //     console.log('콜백함수입니다.');
+        // }
+        // mainFunc(1, 2, callbackFunc);
+        // 콜백을 사용 하는 이유
+        // 1. 비동기 작업의 완료를 처리하기위해
+        // 2. 비동기 작업의 순서를 제어하기위해
+        // 3. 이벤트기반 프로그램밍을 지원하기 의해
+
+        // 콜백함수사용
+        // function goMart() {
+        //         console.log("마트에 가서 어떤 음료를 살지 고민한다.");
+        // }
+
+        // function pickDrink(callback) {
+        //     setTimeout(() => {
+        //         console.log("고민끝");
+        //         product = '제로콜라';
+        //         price = 3000;
+        //         callback(product, price);
+        //     }, 3000);
+        // }
+
+        // function payCallback(product, price) {
+        //     console.log(`상품명 : ${product}, 가격 : ${price}`);
+        // }
+ 
+        // let product;
+        // let price;
+        // goMart();
+        // pickDrink(payCallback);
+
+        // pickDrink(function (product, price) {
+        //     console.log(`상품명 ; ${product}, 가격: ${price}`);
+        // })
+
+
+        // function goMart(){
+        //     console.log("마트에 간다??");
+        // }
+
+        // function buy(callback) {
+        //     setTimeout(() =>{
+        //         console.log("고민끝");
+        //         product = "제로콜라";
+        //         price = 500;
+        //         callback(product, price);
+        //     },3000)
+        // }
+
+        // function pay(){
+        //     console.log(`${product}를 ${price}에 구매합니다.`);
+        // }
+
+        // goMart();
+        // buy(pay);
+        // pay();
+
+        const str = 'Hello World'
+        hello(str);
+        function hello(aaa) {
+            console.log(aaa);
+        }
+
+        
+        const hi = (bbb) =>{
+            console.log(bbb);
+        }
+        hi(str);
+
+        console.log("abc");
+
+
+
+
+    </script>
+</body>
+</html>

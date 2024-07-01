@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // function bkcolor(color) {
+        //     return new Promise((resolve)=>{
+        //         setTimeout(() => {
+        //             document.body.style.backgroundColor = color;
+        //             resolve(color);
+        //         }, 1000);
+        //     })
+        // }
+
+        //내 코드
+
+        // bkcolor("red").then(()=>{
+        //     return bkcolor("orange");
+        // }).then(()=>{
+        //     return bkcolor("yellow");
+        // }).then(()=>{
+        //     return bkcolor("green");
+        // }).then(()=>{
+        //     return bkcolor("blue");
+        // }).then(()=>{
+        //     return bkcolor("navy");
+        // }).then(()=>{
+        //     return bkcolor("purple");
+        // })
+
+
+        // 모범답안 예상
+
+        // async function exec(){
+            // await bkcolor('red');
+            // await bkcolor('orange');
+            // await bkcolor('yellow');
+            // await bkcolor('green');
+            // await bkcolor('blue');
+            // await bkcolor('navy');
+            // await bkcolor('purple');
+        // }exec();
+
+
+        //강사답안
+
+        function changeBgColor(newColor) {
+            return new Promise((resolve) =>{
+                setTimeout(() => {
+                    document.body.style.backgroundColor = newColor;
+                    resolve();
+                }, 1000);
+            })
+        }
+
+        // changeBgColor('red')
+        // .then(()=>{
+        //     return changeBgColor("orange");
+        // }).then(()=>{
+        //     return changeBgColor("yellow");
+        // }).then(()=>{
+        //     return changeBgColor("green");
+        // }).then(()=>{
+        //     return changeBgColor("blue");
+        // })
+
+
+        //async/await 방식
+        async function exec() {
+            await changeBgColor('red');
+            await changeBgColor('orange');
+            await changeBgColor('yellow');
+            await changeBgColor('green');
+            await changeBgColor('blue');
+        }
+
+        exec();
+    </script>
+</body>
+</html>

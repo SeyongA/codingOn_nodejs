@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //배열 구조 분해 할당
+        // 배열
+        const lists = ['apple', 'grape', function () {}]
+        //기존 방식
+        console.log(lists[0], lists[1], lists[2]);
+
+        //배열 구조 분해(순서가 매우 중요)
+        let [item1, item2, item3, item4 ='peach'] =lists;
+        //let item1 = "apple" 이라고 생각하면됨
+
+        console.log(" item1 : " + item1 + " item2 : " + item2 + " item3 : " + item3);
+        console.log("item4 : " + item4);
+
+        item1 = "banana"; // const를 사용하면 에러남 (바꿀수없음)
+        console.log('item1 : ' + item1);
+
+        //교환
+        let x = 1, y =2;
+        [x, y] = [y, x]
+        console.log(x, y);
+
+        //객체 구조분햏 ㅏㄹ당
+        //객체
+        const obj = {
+            name : "신세용",
+            age : 25,
+            gender : "Male",
+            friend : ['주승현', '주영제'],
+            hello : function () {
+                console.log('안녕하세요.');
+            },
+            "k-13" : "13기",    // 특수문자를 쓰고싶을 때는 ""을 사용하여 키값을 작서하면 됨
+                                // (대괄호 표기법) : 동적접근, 특수문자, 띄어쓰기 일때 사용
+        };
+
+        console.log(obj.name);
+        console.log(obj.friend[0]);
+        obj.age = 29;
+        console.log(obj['name']);
+        console.log(obj);
+
+        
+        // let {name, age, gender, friend, hello} = obj
+
+        // console.log("변수 : " + name);
+
+        //객체 구조 분해할당
+        // ket:value형태에서 key값이 매우 중요(순서는필요없음)
+
+        const {gender, age, name, city = '서울'} = obj
+        const {name : newName} = obj;
+        console.log(gender, age, name, newName, city);
+
+        
+    </script>
+</body>
+</html>
