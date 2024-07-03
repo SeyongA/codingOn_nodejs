@@ -1,0 +1,19 @@
+mkdir 폴더명 // 폴더생성
+npm i
+
+날짜폴더 생성
+
+cd 날짜폴더 이동
+
+ls <-- 디렉토리 확인
+mkdir nodejs <-- 날짜폴더 안에 nodejs 파일 생성
+
+cd nodejs <-- nodejs 디렉토리로 이동
+package.json을 복사해서 붙여넣기 (다른폴더에 있는거)
+npm i <-- package.json안에 필요한 모든 npm을 install
+
+npm uninstall npm명 <-- npm명 삭제
+
+
+
+touch module1.js <-- 파일명.확장자 = 모듈생성
