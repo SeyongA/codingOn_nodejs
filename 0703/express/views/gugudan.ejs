@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%= dan %>
+        <% for(let i=1; i < 10; i++){ %>
+            <div>
+                <%= dan %> x <% i %> = <%= dan*i %>
+            </div>
+        <% } %>
+
+        <hr>
+
+        <% for(let i = dan; i < 10; i++){  %>  
+            <div><%    for(let j = leng[0]; j <= leng.length; j++){   %>
+           <%= `${i} x ${j} = ${i * j}` %>
+        <%    } %></div>
+        <% }   %>
+
+</body>
+
+</html>
