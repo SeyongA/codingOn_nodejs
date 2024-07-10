@@ -1,0 +1,18 @@
+server.js 
+
+    model
+    - comment.js
+
+    views
+    - comments.ejs
+    - comment.ejs
+    - index.ejs
+
+    controller
+    - 
+
+    routes
+    - index.js
+        const express = require("express");
+        const router = express.Router();
+        module.exports = router; 
