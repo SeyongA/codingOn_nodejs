@@ -1,0 +1,10 @@
+npm init -y
+npm i express ejs dotenv mysql2
+mkdir views controller model routes
+touch server.js .env
+
+
+HOST = localhost
+MYUSER = kdt13
+PASS = tpdyd123@
+DATA = kdt13
