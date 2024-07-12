@@ -30,7 +30,7 @@ const getVisitor = async (id) => {
     */
     // const query = `SELECT * FROM visitor WHERE id = ${id}`;
     // const [row] = await conn.query(query);
-    const query = "SELECT * FROM visitor WhERE id = ? ";
+    const query = "SELECT * FROM visitor WHERE id = ? ";
     const [row] = await conn.query(query, [id]);
     
     console.log('model', row);

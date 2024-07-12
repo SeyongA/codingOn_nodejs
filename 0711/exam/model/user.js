@@ -10,10 +10,14 @@ const getConn = async () => {
     });
 };
 
-exports.getsignCheck = async(userid) =>{
-    const conn = await getConn();
-    const query = "SELECT * FROM visitor WHERE userid = ?"
-    const [row] = await conn.query(query, [userid]);
+const allUser = async () => {
+    const conn = await getConn(); //mysql접속
+    const query = 'SELECT * FROM createid';
+    const [row] = await conn.query(query);
+    console.log('model', row);
     await conn.end();
     return row;
-}
+};
+
+
+module.exports = {allUser}

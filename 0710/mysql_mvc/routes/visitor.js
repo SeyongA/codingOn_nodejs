@@ -6,7 +6,7 @@ const router = express.Router();
 // localhost:8000/api/visitor
 
 //get 방명록 전체 보이기
-router.get("/", controller.allVisitor)
+router.get("/", controller.allVisitor)  
 //get 방명록 하나 조회
 router.get('/:id', controller.getVisitor)
 //post 방명록 하나 등록
