@@ -10,7 +10,7 @@ router.post('/login', controller.login);
 //GET /info 회원정보
 router.get('/info/:id', controller.info);
 //PATCH /update 회원수정
-router.patch('/update', controller.update);
+router.patch('/update', controller.update); 
 //DELETE /delete 회원삭제
 router.delete('/delete', controller.deleteFunc);
 
