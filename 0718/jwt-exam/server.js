@@ -1,15 +1,18 @@
 require('dotenv').config();
 const express = require('express');
+const bcrypt = require("bcrypt");
 const db = require('./models');
 const app = express();
 const PORT = 8000;
 
+
+app.set("view engine", "ejs")
 app.use(express.json());
-app.set('view engine', 'ejs');
 
 //라우터
-const pageRouter = require('./routes/page');
-app.use('/', pageRouter);
+const pageRouter = require("./routes/page");
+app.use("/", pageRouter);
+
 const memberRouter = require('./routes/member');
 app.use('/api/member', memberRouter);
 
@@ -23,3 +26,17 @@ db.sequelize.sync({ force: false }).then(() => {
         console.log(`http://localhost:${PORT}`);
     });
 });
+
+
+//bcrypt
+const saltNumber = 10;
+
+//암호화
+const bcryptPassword = (password) => {
+    return bcrypt.hashSync(password, saltNumber);
+};
+
+//비고
+const comparePassword = (password, dbPassword) => {
+    return bcrypt.compareSync(password, dbPassword);
+}
