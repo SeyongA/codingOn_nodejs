@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "/socket.io/socket.io.js"></script>
+    <style>
+        ul{
+            padding : 0;
+        }
+        li{
+            list-style :none;
+            display: inline-block;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hello World!</h3>
+    <button onclick="hello()">hello</button>
+    <button onclick="study()">study</button>
+    <button onclick="bye()">bye</button>
+    <p id="text-content"></p>
+    <script>
+        const socket = io();
+        const p = document.querySelector("#text-content");
+
+        //이벤트 생성
+        function hello() {
+            socket.emit('hello', {message : 'hello'});
+        }
+        socket.on('hello_retrun', (arg)=>{
+            p.textContent = `hello : ${arg.message}`;
+        })
+
+        function study() {
+            socket.emit('study', {message : 'study'});
+        }
+        socket.on('study_retrun', (arg)=>{
+            p.textContent = `study : ${arg.message}`;
+        })
+
+        function bye() {
+            socket.emit('bye', {message : 'bye'});
+        }
+        socket.on('bye_retrun', (arg)=>{
+            p.textContent = `bye : ${arg.message}`;
+        })
+
+    </script>
+</body>
+</html>

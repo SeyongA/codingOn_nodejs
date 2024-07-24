@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "/socket.io/socket.io.js"></script>
+    <style>
+        ul{
+            padding : 0;
+        }
+        li{
+            list-style :none;
+            display: inline-block;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h3>Hello World!</h3>
+    <button id="hello_form">hello</button>
+    <button id="study_form">study</button>
+    <button id="bye_form">bye</button>
+    <ul><li></li></ul>
+    <script>
+        const socket = io();
+        const ul = document.querySelector("ul");
+        const hForm = document.querySelector('#hello_form');
+        const sForm = document.querySelector('#study_form');
+        const bForm = document.querySelector('#bye_form');
+        
+        hForm.addEventListener("click", (evemt) => {
+            event.preventDefault();
+            socket.emit('msg', "hello : 안녕하세요");
+        });
+        sForm.addEventListener("click", (evemt) => {
+            event.preventDefault();
+            socket.emit('msg', "study : 공부합시다!");
+        });
+        bForm.addEventListener("click", (evemt) => {
+            event.preventDefault();
+            socket.emit('msg', "bye : 잘가~");
+        });
+
+        //서버에서 받은 값
+        socket.on("chat", (arg)=>{
+            const li = document.querySelector('li');
+            li.textContent = arg;
+            ul.appendChild(li)
+        })
+
+    </script>
+</body>
+</html>
