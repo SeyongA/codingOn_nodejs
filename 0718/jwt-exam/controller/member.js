@@ -58,9 +58,10 @@ exports.login = async (req, res) => {
                  * algorithm: 서명 알고리즘 지정
                  * issuer: 토큰발급자 지정
                  */
+                // SECRET = C89FBB3A71B9A1E128B7187413F75
                 const token = jwt.sign({ id: find.id, userId: find.userId }, process.env.SECRET, { expiresIn: '24h' });
                 console.log(process.env.SECRET);
-                const response = {
+                const response = {  
                     // id: find.id,
                     // userId: find.userId,
                     token,

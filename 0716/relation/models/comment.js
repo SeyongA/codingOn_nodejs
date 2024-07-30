@@ -14,4 +14,4 @@ const comment = (seq) =>{
     });
 };
 
-module.exports = comment;
+module.exports = comment; 

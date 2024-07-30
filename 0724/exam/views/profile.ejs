@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h3>회원조회 페이지</h3>
+    <form>
+      <p id="email"></p>
+      <p id="name"></p>
+    </form>
+
+    <script>
+      (async function () {
+        const res = await axios({
+          method: "get",
+          url: "/api/book/info",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        console.log(res);
+      })();
+    </script>
+  </body>
+</html>
