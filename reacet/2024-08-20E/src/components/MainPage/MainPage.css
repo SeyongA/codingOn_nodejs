@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+main {
+    width: 100%; 
+    max-width: 1802px;
+    margin: 0 auto;
+}
+
+.BarDiv {
+    display: inline-block;
+    width: 300px; 
+    vertical-align: top; 
+    margin-right: 10px; 
+}
+
+.BarImg {
+    width: 100%; 
+    height: auto; 
+    border-radius: 20px;
+    object-fit: cover;
+}
