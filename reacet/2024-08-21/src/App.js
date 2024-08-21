@@ -1,16 +1,27 @@
-function App() {
-  const inputRef = useRef();
+import { useState } from 'react';
+import './App.css';
+import MyComponent from './components/MyComponent';
 
-  const handleFocus = () => {
-    inputRef.current.focus();
+const App = () => {
+  const [number, setNumber] = useState([]);
+
+  const changeNumberState = () => {
+    const arr = [];
+    while (arr.length < 6) {
+      const RandomNum = Math.floor(Math.random() * 45) + 1;
+      if (!arr.includes(RandomNum)) {
+        arr.push(RandomNum);
+      }
+    }
+    setNumber(arr);
   };
+
   return (
     <>
-      <p>(함수형 컴포넌트) 버튼 클릭시 input에 focus 처리</p>
-      <input ref={inputRef} />
-      <button onClick={handleFocus}>버튼</button>
+      <button onClick={changeNumberState} > 추첨</button>
+      {<MyComponent number={number} />}
     </>
   );
-}
+};
 
 export default App;
