@@ -8,13 +8,15 @@ const MainPage = (props) => {
           {props.type.map((x, i) => (
             <div className="BarDiv" key={i}>
               <img className="BarImg" src={x.src} alt={x.name} />
-              <p>{x.name}</p>
-              <p>{x.price}</p>
-              <p>
+              <p className="itemName">{x.name}</p>
+              <p className="itemPrice">{x.price}</p>
+              <div className="tags">
                 {x.hash?.map((a, b) => (
-                  <span key={b}>{a.tag} </span>
+                  <span className="tag" key={b}>
+                    {a.tag}
+                  </span>
                 ))}
-              </p>
+              </div>
             </div>
           ))}
         </div>
