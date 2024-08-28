@@ -1,0 +1,51 @@
+/* 전체 컨테이너 */
+.apple-select-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* 레이블 스타일 */
+  .apple-select-label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  
+  /* Ant Design Select 커스텀 스타일 */
+  .ant-select {
+    width: 100% !important;
+  }
+  
+  /* 이미지 스타일 */
+  .apple-image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .apple-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  /* 텍스트 디스플레이 */
+  .apple-text-display {
+    padding: 20px;
+    background-color: var(--background-color);
+    color: var(--font-color);
+    text-align: center;
+    font-size: 18px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
