@@ -1,38 +1,17 @@
-import { useState } from 'react';
-import { MainPageStyled } from './styled';
-import { Button } from 'antd';
-import { useRouter } from 'next/router';
-import apple from '../../assets/image/apple.jpg'
+import { data1, data2, data3 } from '@/utill';
+import Main from '@/components/Main';
+import { MainPageStyled } from '@/components/Main/styled';
 
 const MainPage = () => {
-  const [number, setNumber] = useState(0);
-  const router = useRouter();
+  const bigData = [...data1, ...data2, ...data3];
+
   return (
     <MainPageStyled>
-      <img src={apple.src} alt="" />
-      <div className="mainTitle">안녕하세요 메인입니다.</div>
-      <div>{number}</div>
-      <Button
-        onClick={() => {
-          setNumber(number + 1);
-        }}
-      >
-        +
-      </Button>
-      <Button
-        onClick={() => {
-          setNumber(number - 1);
-        }}
-      >
-        -
-      </Button>
-      <Button
-        onClick={() => {
-          router.push(`/company/${number}`);
-        }}
-      >
-        이동
-      </Button>
+      <main>
+        {bigData?.map((x: any) => (
+          <Main data={x} key={x.id} />
+        ))}
+      </main>
     </MainPageStyled>
   );
 };

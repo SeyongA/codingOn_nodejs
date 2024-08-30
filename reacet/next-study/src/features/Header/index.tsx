@@ -4,17 +4,26 @@ import { HeaderStyled } from './styled';
 const Header = () => {
   const router = useRouter();
   const path = router.asPath;
-
+  
+  //router 함수 재정의
+  const routingPage = (type : string) => {
+    const number = type === '상품1' ? 1 : type === "상품2" ? 2 : 3;
+    if(type ==="home"){
+      router.push('/');
+    } else {
+      router.push(`/shopping/${number}`)
+    }
+  }
   
   return (
     // path === "/login"? <></> :
     <HeaderStyled>
       <div className={` ${path === "/login" ? "noneHead" : "nav"}`}>
         <div className="navBox">
-          <div onClick={()=> {router.push('/join')}}>회원가입</div>
-          <div onClick={()=> {router.push('/login')}}>로그인</div>
-          <div onClick={()=> {router.push(`/company/${1}`)}}>회사소개</div>
-          <div onClick={()=> {router.push(`/list`)}}>게시판</div>
+          <div onClick={()=> {routingPage('home')}}>Home</div>
+          <div onClick={()=> {routingPage('상품1')}}>상품1</div>
+          <div onClick={()=> {routingPage('상품2')}}>상품2</div>
+          <div onClick={()=> {routingPage('상품3')}}>상품3</div>
         </div>
       </div>
     </HeaderStyled>

@@ -18,6 +18,7 @@ export const HeaderStyled = styled.div`
         margin: 0 20px;
         color: red;
         cursor: pointer;
+
       }
       div:hover {
         color: orange;
